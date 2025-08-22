@@ -1,35 +1,37 @@
+import styles from './App.module.css';
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { HOOK, UNCONTROLLED, type ModalType } from './utils/constants';
+import { Modal } from './components/modal/Modal';
 
-function App() {
-  const [count, setCount] = useState(0);
+const UNCONTROLLED_FORM_TITLE = 'Uncontrolled Form';
+const HOOK_FORM_TITLE = 'React Hook Form';
+
+const App = () => {
+  const [open, setOpen] = useState<ModalType>(null);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+    <div className={styles.container}>
+      <header>
+        <h1>Forms Playground (Portals + Redux)</h1>
+      </header>
+      <div className={styles.btnRow}>
+        <button onClick={() => setOpen(UNCONTROLLED)}>
+          Open Uncontrolled Form
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <button onClick={() => setOpen(HOOK)}>Open React Hook Form</button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+      <Modal
+        title={
+          open === UNCONTROLLED ? UNCONTROLLED_FORM_TITLE : HOOK_FORM_TITLE
+        }
+        isOpen={open !== null}
+        onClose={() => setOpen(null)}
+      >
+        <p>Modal Content</p>
+      </Modal>
+    </div>
   );
-}
+};
 
 export default App;

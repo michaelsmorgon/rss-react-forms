@@ -1,0 +1,38 @@
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 10, 20, .7);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.modalDialog {
+  width: min(960px, 100%);
+  background: #0b1423;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  outline: none;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.modalBody {
+  padding: 16px;
+}
+
+.iconBtn {
+  background: transparent;
+  color: var(--text);
+  border: 0;
+  font-size: 22px;
+  cursor: pointer;
+}
