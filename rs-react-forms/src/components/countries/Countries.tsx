@@ -1,6 +1,7 @@
 import React from 'react';
-import { countries } from '../../utils/constants';
 import styles from './Countries.module.css';
+import { useSelector } from 'react-redux';
+import type { RootState } from '../../store';
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
@@ -10,6 +11,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Countries: React.FC<Props> = ({ id, label, name, error, ...rest }) => {
+  const countries = useSelector((state: RootState) => state.countries);
   return (
     <div className={styles.formField}>
       <label htmlFor={id}>{label}</label>
