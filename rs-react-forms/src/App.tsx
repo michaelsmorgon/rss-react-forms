@@ -2,12 +2,18 @@ import styles from './App.module.css';
 import { useState } from 'react';
 import { HOOK, UNCONTROLLED, type ModalType } from './utils/constants';
 import { Modal } from './components/modal/Modal';
+import { UncontrolledForm } from './forms/uncontrolled-form/UncontrolledForm';
+import { HookForm } from './forms/hook-form/HookForm';
 
 const UNCONTROLLED_FORM_TITLE = 'Uncontrolled Form';
 const HOOK_FORM_TITLE = 'React Hook Form';
 
 const App = () => {
   const [open, setOpen] = useState<ModalType>(null);
+
+  const handleSuccess = () => {
+    setOpen(null);
+  };
 
   return (
     <div className={styles.container}>
@@ -28,7 +34,11 @@ const App = () => {
         isOpen={open !== null}
         onClose={() => setOpen(null)}
       >
-        <p>Modal Content</p>
+        {open === UNCONTROLLED ? (
+          <UncontrolledForm onSuccess={handleSuccess} />
+        ) : (
+          <HookForm onSuccess={handleSuccess} />
+        )}
       </Modal>
     </div>
   );
