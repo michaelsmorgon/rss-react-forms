@@ -4,6 +4,7 @@ import { HOOK, UNCONTROLLED, type ModalType } from './utils/constants';
 import { Modal } from './components/modal/Modal';
 import { UncontrolledForm } from './forms/uncontrolled-form/UncontrolledForm';
 import { HookForm } from './forms/hook-form/HookForm';
+import { Tiles } from './components/tiles/Tiles';
 
 const UNCONTROLLED_FORM_TITLE = 'Uncontrolled Form';
 const HOOK_FORM_TITLE = 'React Hook Form';
@@ -26,6 +27,8 @@ const App = () => {
         </button>
         <button onClick={() => setOpen(HOOK)}>Open React Hook Form</button>
       </div>
+
+      <Tiles />
 
       <Modal
         title={
