@@ -5,7 +5,7 @@ import { fileToBase64 } from '../../utils/fileToBase64';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { addUser } from '../../store/userSlice';
-import styles from './HookForm.module.css';
+import styles from '../Form.module.css';
 import { PasswordStrength } from '../../components/password/PasswordStrength';
 import Countries from '../../components/countries/Countries';
 
