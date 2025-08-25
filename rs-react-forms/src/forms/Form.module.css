@@ -1,0 +1,58 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.formField {
+  background: #0e1726;
+  border: 1px solid rgba(255, 255, 255, .06);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.formField.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formField label,
+.formField legend {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.formField input[type="text"],
+.formField input[type="email"],
+.formField input[type="number"],
+.formField input[type="password"] {
+  width: 100%;
+  background: #0a1320;
+  color: var(--text);
+  border: 1px solid #1b2b44;
+  padding: 8px 10px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.radioRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.fieldError {
+  color: var(--danger);
+  min-height: 18px;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
